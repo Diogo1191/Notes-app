@@ -7,7 +7,7 @@
     <title>Notes App</title>
 </head>
 <body>
-    <div class="container">
+    <div class="appContainer">
         <h1>MY NOTES</h1>
 
         <div class="notaContainer">
@@ -19,10 +19,15 @@
             </div>
         </div>
 
+        <div class="pesquisaContainer">
+            <input id="pesquisaInput" type="text" placeholder="Pesquisa">
+            <button id="pesquisaButton">Pesquisar</button>
+        </div>
+
+        <div id="filtrosContainer"></div>
+
         <div class="notasCriadas">
-            <h2>Notas</h2>
-            <label id="notaTitulo">0</label><br>
-            <label id="notaTexto">1</label>
+            <div id="notasDisplay"></div>
         </div>
     </div>
 
