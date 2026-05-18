@@ -1,0 +1,60 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial;
+    background: linear-gradient(135deg, #e5e488, #ffb26b);
+}
+
+h1{
+    font-weight: bold;
+    text-align: center;
+}
+
+.notaContainer{
+    padding: 30px;
+    border-radius: 20px;
+    width: 600px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+        border: 1px solid gray;
+
+}
+
+textarea{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    resize: none;
+    height: 120px;
+}
+
+#submitInput{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #e5e488;
+    transition: 0.2s;
+    width: 120px;
+    align-self: flex-end;
+    font-weight: bold
+}
+
+button:hover{
+    opacity: 0.6;
+}
