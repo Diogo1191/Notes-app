@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="appContainer">
+        <div class="bar">
+            <button id="themeButton">🌙</button>
+        </div>
+        
         <h1>MY NOTES</h1>
 
         <div class="notaContainer">
@@ -29,9 +33,20 @@
         <div class="notasCriadas">
             <div id="notasDisplay"></div>
         </div>
+
     </div>
 
+    <div id="modalOverLay">
+        <div class="modalBox">
+            <input id="modalTitulo" type="text" placeholder="Titulo">
+            <textarea id="modalTexto" placeholder="Texto"></textarea>
+            <div class="modalButtons">
+                <button id="modalSave">Guardar</button>
+                <button id="modalCancel">Cancelar</button>
+            </div>
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
 </html>
