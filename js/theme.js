@@ -2,6 +2,12 @@ const themeButton = document.getElementById("themeButton")
 
 const temaGuardado = localStorage.getItem("tema")
 
+console.log(localStorage.getItem("tema"))
+
+if(temaGuardado === "dark"){
+    document.body.classList.add("dark-mode")
+}
+
 themeButton.addEventListener("click", function(){
     document.body.classList.toggle("dark-mode")
 
@@ -11,6 +17,4 @@ themeButton.addEventListener("click", function(){
     else{
         localStorage.setItem("tema", "light")
     }
-
-    console.log("clicou")
 })

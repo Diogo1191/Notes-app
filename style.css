@@ -1,8 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     display: flex;
     justify-content: center;
     font-family: Arial;
     background: linear-gradient(135deg, #e5e488, #ffb26b);
+    overflow-x: hidden;
 }
 
 .bar{
@@ -16,30 +21,28 @@ body{
     font-size: 30px;
     background: none;
     border: none;
-    z-index: 9999;  /* <-- Adiciona isto */
-    position: relative;
 }
 
-.dark-mode{
+body.dark-mode{
+    background: linear-gradient(135deg, #111, #222);
+    color: white;
+}
+
+body.dark-mode .notaContainer,
+body.dark-mode .nota,
+body.dark-mode .modalBox{
     background-color: black;
     color: white;
 }
 
-.dark-mode .notaContainer,
-.dark-mode .nota,
-.dark-mode .modalBox{
-    background-color: black;
-    color: white;
-}
-
-.dark-mode input,
-.dark-mode textarea{
+body.dark-mode input,
+body.dark-mode textarea{
     background-color: #2a2a2a;
     color: white;
     border: 1px solid #555;
 }
 
-.dark-mode .favouriteButton{
+body.dark-mode .favouriteButton{
     background-color: transparent;
 }
 
@@ -47,7 +50,8 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
+
 }
 
 h1{
@@ -58,7 +62,8 @@ h1{
 .notaContainer{
     padding: 30px;
     border-radius: 20px;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     background-color: white;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
     min-height: 40vh;
@@ -76,6 +81,7 @@ input{
     padding: 10px;
     border-radius: 10px;
     border: 1px solid gray;
+    font-size: 16px;
 }
 
 input:focus,
@@ -137,7 +143,8 @@ button{
 
 .nota{
     background-color: white;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 15px;
@@ -210,7 +217,8 @@ button{
 }
 
 .modalBox{
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     background-color: white;
 
     display: flex;
@@ -260,5 +268,120 @@ button{
     to{
         opacity: 1;
         transform: scale(1);
+    }
+}
+@media (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+    
+    .notaContainer{
+        padding: 20px;
+        width: 100%;
+    }
+    
+    .nota{
+        max-width: 100%;
+    }
+    
+    #notasDisplay{
+        gap: 15px;
+    }
+}
+
+/* Mobile (480px ou menos) */
+@media (max-width: 480px) {
+    body{
+        padding: 10px;
+        display: block;
+    }
+    
+    h1{
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+    
+    .notaContainer{
+        padding: 15px;
+        min-height: auto;
+    }
+    
+    .notaContainer h3{
+        font-size: 1.2rem;
+    }
+    
+    #submitInput{
+        width: 100%;
+        align-self: stretch;
+    }
+    
+    .pesquisaContainer{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #pesquisaInput{
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    #pesquisaButton{
+        width: 100%;
+    }
+    
+    .nota{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .buttonsContainer{
+        gap: 5px;
+    }
+    
+    .apagarButton,
+    .editarButton{
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .filtrosContainer{
+        width: 100%;
+    }
+    
+    .filtrosContainer button{
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .modalBox{
+        padding: 15px;
+        margin: 10px;
+    }
+    
+    .modalButtons button{
+        flex: 1;
+    }
+    
+    #themeButton{
+        font-size: 25px;
+    }
+}
+
+/* Mobile muito pequeno (360px ou menos) */
+@media (max-width: 360px) {
+    h1{
+        font-size: 1.3rem;
+    }
+    
+    .nota h2{
+        font-size: 1.1rem;
+    }
+    
+    .apagarButton,
+    .editarButton{
+        font-size: 0.85rem;
+        padding: 6px 10px;
     }
 }
